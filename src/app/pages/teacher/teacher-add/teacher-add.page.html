@@ -15,7 +15,7 @@
         <ion-input *ngIf="isNew" placeholder="Enter teacher's first name" formControlName="firstName"></ion-input>
         <ion-input *ngIf="!isNew" placeholder="Enter teacher's first name" formControlName="firstName" [(ngModel)]="teacher.firstName"></ion-input>
 
-        <div *ngIf="form.controls['firstName'].invalid && (form.controls['firstName'].dirty || form.controls['firstName'].touched)" class="alert alert-danger">
+        <div *ngIf="form.get('firstName').invalid && (form.get('firstName').dirty || form.get('firstName').touched)" class="alert alert-danger">
         You must enter a valid first name
         </div>
       </ion-item>
@@ -25,7 +25,7 @@
         <ion-input *ngIf="isNew" placeholder="Enter teacher's last name" formControlName="lastName"></ion-input>
         <ion-input *ngIf="!isNew" placeholder="Enter teacher's last name" formControlName="lastName" [(ngModel)]="teacher.lastName"></ion-input>
 
-        <div *ngIf="form.controls['lastName'].invalid && (form.controls['lastName'].dirty || form.controls['lastName'].touched)" class="alert alert-danger">
+        <div *ngIf="form.get('lastName').invalid && (form.get('lastName').dirty || form.get('lastName').touched)" class="alert alert-danger">
         You must enter a valid last name
         </div>
       </ion-item>
@@ -35,7 +35,7 @@
         <ion-input *ngIf="isNew" placeholder="Enter teacher's photo" formControlName="urlPhoto"></ion-input>
         <ion-input *ngIf="!isNew" placeholder="Enter teacher's photo" formControlName="urlPhoto" [(ngModel)]="teacher.urlPhoto"></ion-input>
 
-        <div *ngIf="form.controls['urlPhoto'].invalid && (form.controls['urlPhoto'].dirty || form.controls['urlPhoto'].touched)" class="alert alert-danger">
+        <div *ngIf="form.get('urlPhoto').invalid && (form.get('urlPhoto').dirty || form.get('urlPhoto').touched)" class="alert alert-danger">
         You must enter a valid photo
         </div>
       </ion-item>
@@ -45,9 +45,9 @@
         <ion-input *ngIf="isNew" placeholder="Enter teacher's years of experience" formControlName="yearsOfExperience"></ion-input>
         <ion-input *ngIf="!isNew" placeholder="Enter teacher's years of experience" formControlName="yearsOfExperience" [(ngModel)]="teacher.yearsOfExperience"></ion-input>
 
-        <div *ngIf="form.controls['yearsOfExperience'].invalid && (form.controls['yearsOfExperience'].dirty || form.controls['yearsOfExperience'].touched)" class="alert alert-danger">
-        You must enter a number for the years of experience
-        </div>
+        <div *ngIf="form.get('yearsOfExperience').invalid && (form.get('yearsOfExperience').dirty || form.get('yearsOfExperience').touched)" class="alert alert-danger">
+          You must enter a number for the years of experience
+          </div>
       </ion-item>
 
       <ion-item>
@@ -55,7 +55,7 @@
         <ion-input *ngIf="isNew" placeholder="Enter teacher's discipline" formControlName="discipline"></ion-input>
         <ion-input *ngIf="!isNew" placeholder="Enter teacher's discipline" formControlName="discipline" [(ngModel)]="teacher.discipline"></ion-input>
 
-        <div *ngIf="form.controls['discipline'].invalid && (form.controls['discipline'].dirty || form.controls['discipline'].touched)" class="alert alert-danger">
+        <div *ngIf="form.get('discipline').invalid && (form.get('discipline').dirty || form.get('discipline').touched)" class="alert alert-danger">
         You must enter a valid discipline
         </div>
       </ion-item>
@@ -65,7 +65,7 @@
         <ion-input *ngIf="isNew" placeholder="Enter teacher's email" formControlName="email"></ion-input>
         <ion-input *ngIf="!isNew" placeholder="Enter teacher's email" formControlName="email" [(ngModel)]="teacher.email"></ion-input>
 
-        <div *ngIf="form.controls['yearsOfExperience'].invalid && (form.controls['email'].dirty || form.controls['email'].touched)" class="alert alert-danger">
+        <div *ngIf="form.get('email').invalid && (form.get('email').dirty || form.get('email').touched)" class="alert alert-danger">
         You must enter a valid email
         </div>
       </ion-item>

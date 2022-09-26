@@ -38,6 +38,7 @@ export class TeacherAddPage implements OnInit {
     if (!this.isNew) {
       this.getTeacher(this.id);
     }
+    console.log(this.isNew);
     this.initForm();
   }
 
@@ -58,8 +59,9 @@ initForm() {
     lastName: ['', [Validators.required, Validators.minLength(4), Validators
       .pattern('^[a-zA-Z 0-9]+$')]],
     urlPhoto: ['', Validators.required],
-    age: ['', [Validators.required, Validators.pattern('^[0-9]+$')]],
-    email: ['^[a-zA-Z0-9.!#$%&*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$', [Validators.required, Validators.pattern('^[0-9]+$')]]
+    yearsOfExperience: ['', [Validators.required, Validators.pattern('^[0-9]+$')]],
+    discipline: [''],
+    email: ['', [Validators.required, Validators.pattern('^[a-zA-Z0-9.!#$%&*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$')]]
   });
 }
 
