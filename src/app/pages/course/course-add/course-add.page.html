@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>{{ title }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div id="container">
+    <form [formGroup]="form" (ngSubmit)="onSubmit(isNew)" novalidate>
+      <ion-item>
+        <ion-label>Course Name:</ion-label>
+        <ion-input *ngIf="isNew" placeholder="Enter course name" formControlName="name"></ion-input>
+        <ion-input *ngIf="!isNew" placeholder="Enter course name" formControlName="name" [(ngModel)]="course.name"></ion-input>
+      </ion-item>
+      <div *ngIf="form.controls['name'].invalid && (form.controls['name'].dirty || form.controls['name'].touched)" class="alert alert-danger">
+      Yous must enter a valid name
+    </div>
+      <ion-item>
+        <ion-label>Teacher:</ion-label>
+        <ion-select formControlName="teacherId" class="form-control" [(ngModel)]="course.teacherId">
+          <ion-select-option *ngFor="let teacher of teachers" [value]="teacher.id">
+            {{teacher.firstName}} {{teacher.lastName}}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+      <div *ngIf="form.controls['teacherId'].invalid && (form.controls['teacherId'].dirty || form.controls['teacherId'].touched)" class="alert alert-danger">
+      Please choose a teacher
+    </div>
+      <ion-item>
+        <ion-label>Pupils: </ion-label>
+        <ion-input *ngIf="isNew" type="number" placeholder="Number of pupils" formControlName="pupils"></ion-input>
+        <ion-input *ngIf="!isNew" type="number" placeholder="Number of pupils" formControlName="pupils" [(ngModel)]="course.pupils"></ion-input>
+        <div *ngIf="form.controls['pupils'].invalid && (form.controls['pupils'].dirty || form.controls['pupils'].touched)" class="alert alert-danger">
+        You must enter a number of pupils for this course
+      </div>
+      </ion-item>
+      <ion-button type="submit" [disabled]="!form.valid">Save</ion-button>
+    </form>
+  </div>
+</ion-content>

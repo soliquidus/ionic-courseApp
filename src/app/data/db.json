@@ -1,0 +1,32 @@
+{
+  "course": [
+    {
+      "id": 1,
+      "name": "Palaeontology",
+      "pupils": 8,
+      "teacherId": 1
+    },
+    {
+      "name": "Psychology",
+      "pupils": 13,
+      "teacherId": 2,
+      "id": 2
+    }
+  ],
+  "teacher": [
+    {
+      "id": 1,
+      "firstName": "Fred",
+      "lastName": "Flintstones",
+      "email": "yabadaba.douh@gmail.com",
+      "courseId": 1
+    },
+    {
+      "id": 2,
+      "firstName": "Charles",
+      "lastName": "Xavier",
+      "email": "mind.blowing@gmail.com",
+      "courseId": 2
+    }
+  ]
+}
