@@ -16,7 +16,7 @@
         <ion-input *ngIf="!isNew" placeholder="Enter course name" formControlName="name" [(ngModel)]="course.name"></ion-input>
       </ion-item>
       <div *ngIf="form.controls['name'].invalid && (form.controls['name'].dirty || form.controls['name'].touched)" class="alert alert-danger">
-      Yous must enter a valid name
+      You must enter a valid name
     </div>
       <ion-item>
         <ion-label>Teacher:</ion-label>
