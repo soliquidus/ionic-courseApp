@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./teacher.page.scss'],
 })
 export class TeacherPage implements OnInit {
+  title: string;
 
   constructor() { }
 

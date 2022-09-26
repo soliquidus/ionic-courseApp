@@ -6,8 +6,12 @@ import {Component} from '@angular/core';
   styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-  public appPages = [
-    {title: 'Course List', url: '/course/list', icon: 'list'},
+  public appPagesCourse = [
+    {titleCourse: 'Course List', url: '/course/list', icon: 'list'},
+  ];
+
+  public appPagesTeacher = [
+    {titleTeacher: 'Teacher List', url: '/teacher/list', icon: 'list'},
   ];
 
   dark = false;
