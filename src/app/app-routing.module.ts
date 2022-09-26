@@ -10,6 +10,10 @@ const routes: Routes = [
   {
     path: 'course',
     loadChildren: () => import('./pages/course/course.module').then(m => m.CoursePageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./pages/authentification/authentification.module').then(m => m.AuthentificationPageModule)
   }
 ];
 
