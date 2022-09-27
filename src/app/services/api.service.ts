@@ -19,6 +19,7 @@ export class ApiService<T extends Model> {
   }
 
   public add(urlPart: string, m: Model): Observable<T> {
+    m.id = 0;
     return this.http.post<T>(url + urlPart, m);
   }
 

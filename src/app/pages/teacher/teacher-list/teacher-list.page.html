@@ -12,11 +12,12 @@
     <ion-searchbar [(ngModel)]="searchInput" placeholder="Search a teacher" type="search"></ion-searchbar>
     <ion-list inset="true">
       <ion-item *ngFor="let teacher of teachers | search: searchInput">
+
         <ion-card>
           <ion-card-header>
-            <ion-card-title> Pr.{{teacher.firstName}}{{teacher.lastName}}</ion-card-title>
+            <ion-card-title> Pr. {{teacher.firstName}} {{teacher.lastName}}</ion-card-title>
             <ion-card-subtitle>
-              {{teacher.yearsOfExperience}}years of experience in{{teacher.discipline}}
+              {{teacher.yearsOfExperience }} years of experience in {{ teacher.discipline}}
             </ion-card-subtitle>
           </ion-card-header>
           <ion-card-content>
@@ -24,12 +25,13 @@
             {{teacher.email}}
           </ion-card-content>
         </ion-card>
-        <ion-button color="danger" (click)="delete(teacher)"
-        ><ion-icon name="trash-outline"> </ion-icon
-        ></ion-button>
-        <ion-button color="primary" [routerLink]="['../edit', teacher.id]"
-        ><ion-icon name="pencil-outline"></ion-icon
-        ></ion-button>
+
+        <ion-button color="danger" (click)="delete(teacher)">
+          <ion-icon name="trash-outline"> </ion-icon>
+        </ion-button>
+        <ion-button color="primary" [routerLink]="['../edit', teacher.id]">
+          <ion-icon name="pencil-outline"></ion-icon>
+        </ion-button>
       </ion-item>
     </ion-list>
     <ion-button [routerLink]="['../add']">

@@ -49,7 +49,7 @@ export class CourseAddPage implements OnInit {
     } else {
       this.service.add(urlPart, this.course).subscribe();
     }
-    redirectTo('/course/list', this.router);
+    window.location.href='/course/list';
   }
 
   initForm() {

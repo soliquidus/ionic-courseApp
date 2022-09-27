@@ -14,8 +14,8 @@ export class Teacher extends Model {
   urlPhoto: string = '',
   yearsOfExperience: number = 0,
   discipline: string = '',
-  email: string = '')
-  {
+  email: string = ''
+  ) {
     super();
     this.firstName = firstName;
     this.lastName = lastName;

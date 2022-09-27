@@ -38,7 +38,6 @@ export class TeacherAddPage implements OnInit {
     if (!this.isNew) {
       this.getTeacher(this.id);
     }
-    console.log(this.isNew);
     this.initForm();
   }
 
@@ -49,7 +48,7 @@ export class TeacherAddPage implements OnInit {
     } else {
       this.service.add(urlPart, this.teacher).subscribe();
     }
-    redirectTo('/teacher/list', this.router);
+    window.location.href='/teacher/list';
   }
 
 initForm() {

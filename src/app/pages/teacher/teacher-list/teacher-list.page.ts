@@ -25,11 +25,11 @@ export class TeacherListPage implements OnInit {
 
   ngOnInit() {
     this.teacher = new Teacher();
-    this.service.findAll(urlPart).subscribe(list => this.teachers);
+    this.service.findAll(urlPart).subscribe(list => this.teachers = list);
   }
 
   delete(teacher: Teacher) {
-    this.service.delete(urlPart, teacher).subscribe( () => {
+    this.service.delete(urlPart, teacher).subscribe(() => {
       this.ngOnInit();
     });
   }

@@ -5,7 +5,11 @@ export class Course extends Model {
   pupils!: number;
   teacherId!: number;
 
-  constructor(name: string = '', pupils: number = 0, teacherId: number = 0) {
+  constructor(
+    name: string = '',
+    pupils: number = 0,
+    teacherId: number = 0
+    ) {
     super();
     this.name = name;
     this.pupils = pupils;

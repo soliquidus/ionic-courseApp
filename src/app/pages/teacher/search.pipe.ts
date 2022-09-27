@@ -17,7 +17,11 @@ export class SearchPipe implements PipeTransform {
     searchInput = searchInput.toLowerCase();
     return teacher.filter(t =>
       t.firstName.toLowerCase().includes(searchInput) ||
-      t.lastName.toLowerCase().includes(searchInput));
+      t.lastName.toLowerCase().includes(searchInput) ||
+      t.yearsOfExperience.toLocaleString().includes(searchInput) ||
+      t.discipline.toLowerCase().includes(searchInput) ||
+      t.email.toLowerCase().includes(searchInput)
+      );
   }
 
 }

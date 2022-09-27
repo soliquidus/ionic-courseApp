@@ -12,6 +12,7 @@
     <ion-searchbar [(ngModel)]="searchInput" placeholder="Search a course" type="search"></ion-searchbar>
     <ion-list inset="true">
       <ion-item *ngFor="let course of courses | search: searchInput">
+
         <ion-card>
           <ion-card-header>
             <ion-card-title> {{course.name}} </ion-card-title>
@@ -21,12 +22,13 @@
           </ion-card-header>
           <ion-card-content>Pupils: {{course.pupils}} </ion-card-content>
         </ion-card>
-        <ion-button color="danger" (click)="delete(course)"
-        ><ion-icon name="trash-outline"> </ion-icon
-        ></ion-button>
-        <ion-button color="primary" [routerLink]="['../edit', course.id]"
-        ><ion-icon name="pencil-outline"></ion-icon
-        ></ion-button>
+
+        <ion-button color="danger" (click)="delete(course)">
+          <ion-icon name="trash-outline"> </ion-icon>
+        </ion-button>
+        <ion-button color="primary" [routerLink]="['../edit', course.id]">
+          <ion-icon name="pencil-outline"></ion-icon>
+        </ion-button>
       </ion-item>
     </ion-list>
     <ion-button [routerLink]="['../add']">
