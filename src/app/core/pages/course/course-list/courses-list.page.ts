@@ -1,6 +1,6 @@
 import {Component, OnInit, Output} from '@angular/core';
-import {ApiService} from '../../../services/api.service';
-import {UrlParts} from '../../../utils/urlParts';
+import {ApiService} from '../../../../services/api.service';
+import {UrlParts} from '../../../../utils/urlParts';
 import {CourseJoint} from '../../../models/courseJoint';
 
 const urlPart = UrlParts.courseProfessorJoint;

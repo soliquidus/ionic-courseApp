@@ -1,38 +1,42 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {ApiService} from '../../../services/api.service';
-import {User} from '../../../models/User';
 import {AuthentificationService} from '../services/authentification.service';
+import {redirectTo} from '../../../utils/methods';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
-  styleUrls: ['../../globalPageStyle.scss'],
+  styleUrls: ['../../pages/globalPageStyle.scss'],
 })
 export class LoginPage implements OnInit {
 
   form!: FormGroup;
 
   constructor(
-    private service: ApiService<User>,
     private formBuilder: FormBuilder,
-    private authService: AuthentificationService
+    private authService: AuthentificationService,
+    private router: Router
   ) {
   }
 
   ngOnInit() {
     this.initForm();
+    if(this.authService.canActivate()){
+      redirectTo('/course/list', this.router);
+    }
   }
 
   onSubmit() {
     const userData = this.form.value;
     this.authService.loginFilter(userData.login, userData.password);
+    redirectTo('/course/list', this.router);
   }
 
   initForm(): void {
     this.form = this.formBuilder.group({
       login: ['', [Validators.required, Validators.minLength(4)]],
-      password: ['', [Validators.required, Validators.minLength(8)]]
+      password: ['', [Validators.required, Validators.minLength(4)]]
     });
   }
 

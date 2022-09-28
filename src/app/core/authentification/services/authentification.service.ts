@@ -1,10 +1,10 @@
 import {Injectable} from '@angular/core';
 import {BehaviorSubject, Observable} from 'rxjs';
-import {User} from '../../../models/User';
+import {User} from '../../models/User';
 import {HttpClient, HttpParams} from '@angular/common/http';
 import {Router} from '@angular/router';
 import {ApiService} from '../../../services/api.service';
-import {Role} from '../../../models/role';
+import {Role} from '../../models/role';
 import {UrlParts} from '../../../utils/urlParts';
 import {redirectTo} from '../../../utils/methods';
 import {map} from 'rxjs/operators';
@@ -50,12 +50,14 @@ export class AuthentificationService {
   }
 
   public loginFilter(username: string, password: string): void {
+    console.log('OK');
     this.http.get<User[]>(UrlParts.url + UrlParts.user).pipe(
       map(logins => logins.filter(
         login => login.login === username && login.password === password
       ))
     ).subscribe({
       next: logins => {
+        console.log('OK2');
         if (logins.length === 1) {
           const newLogin = logins[0];
           console.log(newLogin);
@@ -92,10 +94,10 @@ export class AuthentificationService {
   canActivate(): boolean {
     let found = false;
     this.getAuthenticatedUser().subscribe(login => {
-      if (login.login === 'Anonymous') {
+      if (login.roleId === 1 || login.roleId === 2) {
         found = true;
       }
     });
-    return !found;
+    return found;
   }
 }

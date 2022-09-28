@@ -7,7 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { CoursesListPageRoutingModule } from './courses-list-routing.module';
 
 import { CoursesListPage } from './courses-list.page';
-import { SearchPipe } from '../search.pipe';
+import { SearchPipe } from '../../shared/search.pipe';
 
 @NgModule({
   imports: [

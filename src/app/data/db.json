@@ -52,8 +52,8 @@
     },
     {
       "id": 3,
-      "login": "Admin",
-      "password": "1234admin",
+      "login": "admin",
+      "password": "admin",
       "firstName": "The",
       "lastName": "Admin",
       "email": "admin@gmail.com",

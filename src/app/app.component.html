@@ -1,4 +1,4 @@
-<ion-app [class.dark-theme]="dark">
+<ion-app>
   <ion-split-pane contentId="main-content">
 
     <ion-menu contentId="main-content">
@@ -18,7 +18,7 @@
           </ion-menu-toggle>
         </ion-list>
 
-        <ion-list *ngIf="loggedIn" lines="none">
+        <ion-list *ngIf="authService.canActivate()" lines="none">
           <ion-list-header>
             Account
           </ion-list-header>
@@ -33,16 +33,7 @@
           </ion-menu-toggle>
 
           <ion-menu-toggle autoHide="false">
-            <ion-item routerLink="/support" routerLinkActive="active" routerDirection="root" detail="false">
-              <ion-icon slot="start" name="help"></ion-icon>
-              <ion-label>
-                Support
-              </ion-label>
-            </ion-item>
-          </ion-menu-toggle>
-
-          <ion-menu-toggle autoHide="false">
-            <ion-item button="" (click)="logout()" *ngIf="authService.canActivate" detail="false">
+            <ion-item button="" (click)="logout()" detail="false">
               <ion-icon slot="start" name="log-out"></ion-icon>
               <ion-label>
                 Logout
@@ -52,25 +43,16 @@
 
         </ion-list>
 
-        <ion-list *ngIf="!loggedIn" lines="none">
+        <ion-list *ngIf="!authService.canActivate()" lines="none">
           <ion-list-header>
             Account
           </ion-list-header>
 
           <ion-menu-toggle autoHide="false">
-            <ion-item [routerLink]="['/login/connection']" routerLinkActive="active" routerDirection="root" detail="false">
+            <ion-item [routerLink]="['/login']" routerLinkActive="active" routerDirection="root" detail="false">
               <ion-icon slot="start" name="log-in"></ion-icon>
               <ion-label>
                 Login
-              </ion-label>
-            </ion-item>
-          </ion-menu-toggle>
-
-          <ion-menu-toggle autoHide="false">
-            <ion-item routerLink="/support" routerLinkActive="active" routerDirection="root" detail="false">
-              <ion-icon slot="start" name="help"></ion-icon>
-              <ion-label>
-                Support
               </ion-label>
             </ion-item>
           </ion-menu-toggle>
@@ -83,14 +65,6 @@
               </ion-label>
             </ion-item>
           </ion-menu-toggle>
-
-          <ion-item>
-            <ion-icon slot="start" name="moon-outline"></ion-icon>
-            <ion-label>
-              Dark Mode
-            </ion-label>
-            <ion-toggle [(ngModel)]="dark"></ion-toggle>
-          </ion-item>
         </ion-list>
       </ion-content>
     </ion-menu>

@@ -4,7 +4,7 @@ import {Routes, RouterModule} from '@angular/router';
 import {CoursePage} from './course.page';
 import {CoursesListPage} from './course-list/courses-list.page';
 import {CourseAddPage} from './course-add/course-add.page';
-import {TeacherResolver} from './teacher.resolver';
+import {TeacherResolver} from '../shared/teacher.resolver';
 
 const routes: Routes = [
   {
