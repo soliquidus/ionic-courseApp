@@ -1,7 +1,8 @@
-import {Component, OnInit, Output} from '@angular/core';
-import {ApiService} from 'src/app/services/api.service';
-import {UrlParts} from 'src/app/utils/urlParts';
-import {User} from '../../../models/User';
+import { Component, OnInit, Output } from '@angular/core';
+import { PhotoService } from 'src/app/core/authentification/services/photo.service';
+import { ApiService } from 'src/app/services/api.service';
+import { UrlParts } from 'src/app/utils/urlParts';
+import { User } from '../../../models/User';
 
 const urlPart = UrlParts.user;
 
@@ -19,10 +20,12 @@ export class TeacherListPage implements OnInit {
   teachers!: User[];
   searchInput!: string;
 
-  constructor(private service: ApiService<User>) {
-  }
+  constructor(private service: ApiService<User>,
+    public photoService: PhotoService
+  ) { }
 
-  ngOnInit() {
+  async ngOnInit() {
+    await this.photoService.loadSaved();
     this.service.findAll(urlPart).subscribe(list => this.teachers = list.filter(u => u.roleId === 2));
   }
 
