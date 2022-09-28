@@ -6,7 +6,7 @@ import {AuthentificationGuard} from './authentification/services/authentificatio
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'course',
     pathMatch: 'full'
   },
   {
@@ -16,16 +16,16 @@ const routes: Routes = [
   {
     path: 'course',
     loadChildren: () => import('./pages/course/course.module').then(m => m.CoursePageModule),
-    canActivate: [AuthentificationGuard]
+    //canActivate: [AuthentificationGuard]
   },
   {
     path: 'teacher', loadChildren: () => import('./pages/teacher/teacher.module')
       .then(m => m.TeacherPageModule),
-    canActivate: [AuthentificationGuard]
+    //canActivate: [AuthentificationGuard]
   },
   {
     path: 'camera',
-    loadChildren: () => import('../pages/camera/camera/camera.module').then(m => m.CameraPageModule)
+    loadChildren: () => import('./pages/pictures/components/camera.module').then(m => m.CameraPageModule)
   }
 ];
 

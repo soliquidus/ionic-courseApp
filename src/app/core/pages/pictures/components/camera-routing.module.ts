@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { CameraPage } from './components/camera.page';
+import { CameraPage } from './camera/camera.page';
 
 const routes: Routes = [
   {
