@@ -46,6 +46,7 @@ export class TeacherAddPage implements OnInit {
     if(!isNew) {
       this.service.update(urlPart, this.id, this.teacher).subscribe();
     } else {
+      this.teacher.roleId = 2;
       this.service.add(urlPart, this.teacher).subscribe();
     }
     redirectTo('teacher/list', this.router);
