@@ -1,4 +1,5 @@
 import { Component, OnInit, Output } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Teacher } from 'src/app/models/teacher';
 import { ApiService } from 'src/app/services/api.service';
@@ -19,6 +20,8 @@ export class TeacherListPage implements OnInit {
   teacher!: Teacher;
   teachers!: Teacher[];
   searchInput!: string;
+  searchText!: string;
+  results = document.getElementById('results');
 
   constructor(private service: ApiService<Teacher>, private router: Router) {
   }
@@ -33,5 +36,4 @@ export class TeacherListPage implements OnInit {
       this.ngOnInit();
     });
   }
-
 }

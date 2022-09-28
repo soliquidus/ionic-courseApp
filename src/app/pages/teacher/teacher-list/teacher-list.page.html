@@ -11,7 +11,40 @@
   <div id="container">
     <ion-searchbar [(ngModel)]="searchInput" placeholder="Search a teacher" type="search"></ion-searchbar>
     <ion-list inset="true">
-      <ion-item *ngFor="let teacher of teachers | search: searchInput">
+
+      <fieldset>
+        <legend>Sort by :</legend>
+
+        <div class="btn-group" data-toggle="buttons">
+          <label id='RADIO' class="btn btn-primary">
+            <input type="radio" name="sortBy" value="firstName">First name
+          </label>
+          <label class="btn btn-primary">
+            <input type="radio" name="sortBy" value="lastName">Last Name
+          </label>
+          <label class="btn btn-primary">
+            <input type="radio" name="sortBy" value="yearsOfExperience">Years of experience
+          </label>
+          <label class="btn btn-primary">
+            <input type="radio" name="sortBy" value="discipline">Discipline
+          </label>
+          <label class="btn btn-primary">
+            <input type="radio" name="sortBy" value="email">Email
+          </label>
+        </div>
+
+        <div id="results"></div>
+
+
+
+          <input type="radio" id="discipline" name="sortBy" value="discipline">
+          <label for="discipline">Discipline </label>
+
+          <input type="radio" id="email" name="sortBy" value="email">
+          <label for="email">Email</label>
+      </fieldset>
+
+      <ion-item *ngFor="let teacher of teachers | sort: 'sortBy.value' | search: searchInput">
 
         <ion-card>
           <ion-card-header>
@@ -19,10 +52,12 @@
             <ion-card-subtitle>
               {{teacher.yearsOfExperience }} years of experience in {{ teacher.discipline}}
             </ion-card-subtitle>
+            <ion-card-subtitle>
+              {{teacher.email}}
+            </ion-card-subtitle>
           </ion-card-header>
           <ion-card-content>
             {{teacher.urlPhoto}}
-            {{teacher.email}}
           </ion-card-content>
         </ion-card>
 
