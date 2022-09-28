@@ -8,7 +8,6 @@ import { PhotoService } from 'src/app/core/authentification/services/photo.servi
 })
 export class CameraPage implements OnInit {
 
-  title: string;
 
   constructor(public photoService: PhotoService) { }
 
