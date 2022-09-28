@@ -6,7 +6,7 @@ import {AuthentificationGuard} from './authentification/services/authentificatio
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'course',
     pathMatch: 'full'
   },
   {
@@ -25,7 +25,7 @@ const routes: Routes = [
   },
   {
     path: 'camera',
-    loadChildren: () => import('../pages/camera/camera/camera.module').then(m => m.CameraPageModule)
+    loadChildren: () => import('./pages/pictures/components/camera.module').then(m => m.CameraPageModule)
   }
 ];
 

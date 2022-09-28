@@ -1,7 +1,6 @@
 {
   "course": [
     {
-      "id": 1,
       "name": "Palaeontology",
       "pupils": 8,
       "userId": 1
@@ -11,6 +10,12 @@
       "pupils": 13,
       "userId": 2,
       "id": 2
+    },
+    {
+      "name": "fdsff",
+      "pupils": 1,
+      "teacherId": 1,
+      "id": 3
     }
   ],
   "user": [
@@ -48,6 +53,34 @@
       "lastName": "Admin",
       "email": "admin@gmail.com",
       "roleId": 1
+    },
+    {
+      "firstName": "ghghgfh",
+      "lastName": "hgfdhgfhf",
+      "urlPhoto": "hgfhgf",
+      "yearsOfExperience": "06",
+      "discipline": "hgfdgfd",
+      "email": "fghdhg@gmail.com",
+      "id": 4
+    },
+    {
+      "firstName": "dsffds",
+      "lastName": "fdssfd",
+      "urlPhoto": "",
+      "yearsOfExperience": "1",
+      "discipline": "dsfdsfsd",
+      "email": "fdsfd@gmail.com",
+      "id": 5
+    },
+    {
+      "firstName": "dsgdfgf",
+      "lastName": "dfgfd",
+      "urlPhoto": "f",
+      "yearsOfExperience": "1",
+      "discipline": "dfgfdgfd",
+      "email": "fdgfd@gmail.com",
+      "roleId": 2,
+      "id": 6
     }
   ],
   "role": [
