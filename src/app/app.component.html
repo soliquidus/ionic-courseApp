@@ -3,7 +3,7 @@
 
     <ion-menu contentId="main-content">
       <ion-content>
-        <ion-list lines="none">
+        <ion-list lines="none" *ngIf="authService.canActivate()">
           <ion-list-header>
             Courses
           </ion-list-header>
@@ -18,7 +18,7 @@
           </ion-menu-toggle>
         </ion-list>
 
-        <ion-list lines="none">
+        <ion-list *ngIf="authService.canActivate()" lines="none">
           <ion-list lines="none">
             <ion-list-header>
               Camera
@@ -35,7 +35,7 @@
           </ion-list>
         </ion-list>
 
-        <ion-list lines="none">
+        <ion-list *ngIf="authService.canActivate()" lines="none">
           <ion-list-header>
             Account
           </ion-list-header>
@@ -60,7 +60,7 @@
 
         </ion-list>
 
-        <ion-list lines="none">
+        <ion-list *ngIf="!authService.canActivate()" lines="none">
           <ion-list-header>
             Account
           </ion-list-header>

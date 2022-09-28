@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginPage } from './authentification/login/login.page';
-import {AuthentificationGuard} from './authentification/services/authentification.guard';
+import { AuthentificationGuard } from './authentification/services/authentification.guard';
 
 const routes: Routes = [
   {
@@ -16,12 +16,12 @@ const routes: Routes = [
   {
     path: 'course',
     loadChildren: () => import('./pages/course/course.module').then(m => m.CoursePageModule),
-    //canActivate: [AuthentificationGuard]
+    canActivate: [AuthentificationGuard]
   },
   {
     path: 'teacher', loadChildren: () => import('./pages/teacher/teacher.module')
       .then(m => m.TeacherPageModule),
-    //canActivate: [AuthentificationGuard]
+    canActivate: [AuthentificationGuard]
   },
   {
     path: 'camera',
