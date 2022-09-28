@@ -21,8 +21,6 @@
       "firstName": "Fred",
       "lastName": "Flintstones",
       "email": "yabadaba.douh@gmail.com",
-      "discipline": "Palaeontology",
-      "yearsOfExperience": 40,
       "courseId": 1,
       "roleId": 2
     },
@@ -32,8 +30,6 @@
       "password": "12345678",
       "firstName": "Charles",
       "lastName": "Xavier",
-      "discipline": "Psychology",
-      "yearsOfExperience": 35,
       "email": "mind.blowing@gmail.com",
       "roleId": 2
     },
