@@ -4,12 +4,12 @@
       "id": 1,
       "name": "Palaeontology",
       "pupils": 8,
-      "teacherId": 1
+      "userId": 1
     },
     {
       "name": "Psychology",
       "pupils": 13,
-      "teacherId": 2,
+      "userId": 2,
       "id": 2
     }
   ],
@@ -21,7 +21,10 @@
       "firstName": "Fred",
       "lastName": "Flintstones",
       "email": "yabadaba.douh@gmail.com",
+      "yearsOfExperience": 35,
+      "urlPhoto": "",
       "courseId": 1,
+      "discipline": "Palaeontology",
       "roleId": 2
     },
     {
@@ -31,7 +34,11 @@
       "firstName": "Charles",
       "lastName": "Xavier",
       "email": "mind.blowing@gmail.com",
-      "roleId": 2
+      "yearsOfExperience": 40,
+      "discipline": "Psychology",
+      "urlPhoto": "",
+      "roleId": 2,
+      "courseId": 2
     },
     {
       "id": 3,

@@ -15,8 +15,8 @@
         <ion-card>
           <ion-card-header>
             <ion-card-title> {{course.name}} </ion-card-title>
-            <ion-card-subtitle *ngFor="let prof of course.teacher">
-              {{prof.lastName}} {{prof.firstName}}
+            <ion-card-subtitle *ngFor="let prof of course.user">
+              {{prof['firstName']}} {{prof['lastName']}}
             </ion-card-subtitle>
           </ion-card-header>
           <ion-card-content>Pupils: {{course.pupils}} </ion-card-content>

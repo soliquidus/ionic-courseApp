@@ -16,8 +16,8 @@ export class SearchCoursePipe implements PipeTransform {
 
     searchInput = searchInput.toLowerCase();
     return course.filter(c => c.name.toLowerCase().includes(searchInput) ||
-        c.teacher[0].firstName.toLowerCase().includes(searchInput) ||
-        c.teacher[0].lastName.toLowerCase().includes(searchInput));
+        c.user[0].firstName.toLowerCase().includes(searchInput) ||
+        c.user[0].lastName.toLowerCase().includes(searchInput));
   }
 
 }
