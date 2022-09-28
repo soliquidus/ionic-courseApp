@@ -4,5 +4,6 @@ export enum UrlParts {
   teacher = 'teacher',
   user = 'user',
   role = 'role',
+  camera = 'camera',
   courseProfessorJoint = 'course?_embed=teacher'
 }
