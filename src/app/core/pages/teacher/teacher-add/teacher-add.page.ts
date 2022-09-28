@@ -5,6 +5,7 @@ import { UrlParts } from 'src/app/utils/urlParts';
 import { ApiService } from '../../../../services/api.service';
 import { User } from '../../../models/User';
 import { redirectTo } from '../../../../utils/methods';
+import { PhotoService } from 'src/app/core/authentification/services/photo.service';
 
 const urlPart = UrlParts.user;
 
@@ -26,12 +27,14 @@ export class TeacherAddPage implements OnInit {
     private service: ApiService<User>,
     private router: Router,
     private route: ActivatedRoute,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    public photoService: PhotoService
   ) {
 
   }
 
-  ngOnInit() {
+  async ngOnInit() {
+    await this.photoService.loadSaved();
     this.getTeachers();
     this.id = this.route.snapshot.params.id;
     this.isNew = !this.id;

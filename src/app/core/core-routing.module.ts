@@ -16,12 +16,12 @@ const routes: Routes = [
   {
     path: 'course',
     loadChildren: () => import('./pages/course/course.module').then(m => m.CoursePageModule),
-    canActivate: [AuthentificationGuard]
+    //canActivate: [AuthentificationGuard]
   },
   {
     path: 'teacher', loadChildren: () => import('./pages/teacher/teacher.module')
       .then(m => m.TeacherPageModule),
-    canActivate: [AuthentificationGuard]
+    //canActivate: [AuthentificationGuard]
   },
   {
     path: 'camera',
