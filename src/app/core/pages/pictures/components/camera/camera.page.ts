@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PhotoService } from 'src/app/services/photo.service';
+import { PhotoService } from 'src/app/core/authentification/services/photo.service';
 
 @Component({
   selector: 'app-camera',
@@ -8,7 +8,6 @@ import { PhotoService } from 'src/app/services/photo.service';
 })
 export class CameraPage implements OnInit {
 
-  title: string;
 
   constructor(public photoService: PhotoService) { }
 

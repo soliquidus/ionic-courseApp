@@ -1,13 +1,13 @@
-import {Injectable} from '@angular/core';
-import {BehaviorSubject, Observable} from 'rxjs';
-import {User} from '../../models/User';
-import {HttpClient, HttpParams} from '@angular/common/http';
-import {Router} from '@angular/router';
-import {ApiService} from '../../../services/api.service';
-import {Role} from '../../models/role';
-import {UrlParts} from '../../../utils/urlParts';
-import {redirectTo} from '../../../utils/methods';
-import {map} from 'rxjs/operators';
+import { Injectable } from '@angular/core';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { User } from '../../models/User';
+import { HttpClient, HttpParams } from '@angular/common/http';
+import { Router } from '@angular/router';
+import { ApiService } from '../../../services/api.service';
+import { Role } from '../../models/role';
+import { UrlParts } from '../../../utils/urlParts';
+import { redirectTo } from '../../../utils/methods';
+import { map } from 'rxjs/operators';
 
 const ANONYMOUS_USER = new User(0, 'Anonymous');
 
@@ -19,15 +19,15 @@ export class AuthentificationService {
   protected authenticatedUser: BehaviorSubject<User> = new BehaviorSubject<User>(ANONYMOUS_USER);
 
   constructor(private http: HttpClient,
-              private router: Router,
-              private service: ApiService<Role>) {
+    private router: Router,
+    private service: ApiService<Role>) {
   }
 
 
   public login(username: string, password: string): Observable<User | null> {
     const params = new HttpParams().set('username', username).set('password', password);
     console.log('login');
-    return this.http.get<User[]>(UrlParts.url + UrlParts.user, {params}).pipe(map(user => {
+    return this.http.get<User[]>(UrlParts.url + UrlParts.user, { params }).pipe(map(user => {
       if (user.length === 1) {
         const newLogin = user[0];
         if (<number>newLogin.roleId > 0) {

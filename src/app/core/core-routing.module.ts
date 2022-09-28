@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginPage } from './authentification/login/login.page';
-import {AuthentificationGuard} from './authentification/services/authentification.guard';
+import { AuthentificationGuard } from './authentification/services/authentification.guard';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'course',
     pathMatch: 'full'
   },
   {
@@ -25,7 +25,7 @@ const routes: Routes = [
   },
   {
     path: 'camera',
-    loadChildren: () => import('../pages/camera/camera/camera.module').then(m => m.CameraPageModule)
+    loadChildren: () => import('./pages/pictures/components/camera.module').then(m => m.CameraPageModule)
   }
 ];
 

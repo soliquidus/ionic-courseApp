@@ -1,11 +1,11 @@
-import {Component, OnInit} from '@angular/core';
-import {Course} from '../../../models/course';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {ApiService} from '../../../../services/api.service';
-import {ActivatedRoute, Router} from '@angular/router';
-import {UrlParts} from '../../../../utils/urlParts';
-import {Teacher} from '../../../models/teacher';
-import {redirectTo} from '../../../../utils/methods';
+import { Component, OnInit } from '@angular/core';
+import { Course } from '../../../models/course';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ApiService } from '../../../../services/api.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { UrlParts } from '../../../../utils/urlParts';
+import { Teacher } from '../../../models/teacher';
+import { redirectTo } from '../../../../utils/methods';
 
 const urlPart = UrlParts.course;
 
@@ -44,12 +44,13 @@ export class CourseAddPage implements OnInit {
 
   onSubmit(isNew: boolean) {
     this.course = this.form.value;
-    if(!isNew){
+    if (!isNew) {
       this.service.update(urlPart, this.id, this.course).subscribe();
     } else {
       this.service.add(urlPart, this.course).subscribe();
     }
-    redirectTo('/course/list', this.router);
+    redirectTo('course/list', this.router);
+
   }
 
   initForm() {

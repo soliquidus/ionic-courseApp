@@ -1,10 +1,11 @@
-import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {ActivatedRoute, Router} from '@angular/router';
-import {UrlParts} from 'src/app/utils/urlParts';
-import {ApiService} from '../../../../services/api.service';
-import {User} from '../../../models/User';
-import {redirectTo} from '../../../../utils/methods';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { UrlParts } from 'src/app/utils/urlParts';
+import { ApiService } from '../../../../services/api.service';
+import { User } from '../../../models/User';
+import { redirectTo } from '../../../../utils/methods';
+import { PhotoService } from 'src/app/core/authentification/services/photo.service';
 
 const urlPart = UrlParts.user;
 
@@ -26,12 +27,14 @@ export class TeacherAddPage implements OnInit {
     private service: ApiService<User>,
     private router: Router,
     private route: ActivatedRoute,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    public photoService: PhotoService
   ) {
 
   }
 
-  ngOnInit() {
+  async ngOnInit() {
+    await this.photoService.loadSaved();
     this.getTeachers();
     this.id = this.route.snapshot.params.id;
     this.isNew = !this.id;
@@ -43,7 +46,7 @@ export class TeacherAddPage implements OnInit {
 
   onSubmit(isNew: boolean) {
     this.teacher = this.form.value;
-    if(!isNew) {
+    if (!isNew) {
       this.service.update(urlPart, this.id, this.teacher).subscribe();
     } else {
       this.teacher.roleId = 2;
@@ -52,24 +55,24 @@ export class TeacherAddPage implements OnInit {
     redirectTo('teacher/list', this.router);
   }
 
-initForm() {
-  this.form = this.formBuilder.group({
-    firstName: ['', [Validators.required, Validators.minLength(4), Validators
-      .pattern('^[a-zA-Z 0-9]+$')]],
-    lastName: ['', [Validators.required, Validators.minLength(4), Validators
-      .pattern('^[a-zA-Z 0-9]+$')]],
-    urlPhoto: [''],
-    yearsOfExperience: ['', [Validators.required, Validators.pattern('^[0-9]+$')]],
-    discipline: [''],
-    email: ['', [Validators.required, Validators.pattern('^[a-zA-Z0-9.!#$%&*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$')]]
-  });
-}
+  initForm() {
+    this.form = this.formBuilder.group({
+      firstName: ['', [Validators.required, Validators.minLength(4), Validators
+        .pattern('^[a-zA-Z 0-9]+$')]],
+      lastName: ['', [Validators.required, Validators.minLength(4), Validators
+        .pattern('^[a-zA-Z 0-9]+$')]],
+      urlPhoto: [''],
+      yearsOfExperience: ['', [Validators.required, Validators.pattern('^[0-9]+$')]],
+      discipline: [''],
+      email: ['', [Validators.required, Validators.pattern('^[a-zA-Z0-9.!#$%&*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$')]]
+    });
+  }
 
-private getTeacher(id: number) {
-  this.service.find(urlPart, id).subscribe(
-    teacher => this.teacher = teacher
-  );
-}
+  private getTeacher(id: number) {
+    this.service.find(urlPart, id).subscribe(
+      teacher => this.teacher = teacher
+    );
+  }
 
   private getTeachers() {
     this.route.data.subscribe(data => this.teachers = data.teachers);

@@ -8,7 +8,7 @@
 
     </ion-buttons> -->
 
-    <ion-title> {{ title }} CAMERA</ion-title>
+    <ion-title>CAMERA</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -17,14 +17,13 @@
 <ion-content [fullscreen]="true">
 
   <ion-toolbar>
-    <ion-title size="large">Take a selfist with your fucking Kadmerad</ion-title>
+    <ion-title size="large">Take a selfie</ion-title>
   </ion-toolbar>
 
 
   <ion-content>
     <ion-grid>
       <ion-row>
-
         <ion-col size="6" *ngFor="let photo of photoService.photos; index as position">
           <ion-img [src]="photo.webviewPath"></ion-img>
         </ion-col>
@@ -33,6 +32,7 @@
 
     <!-- ion-fab markup  -->
   </ion-content>
+
   <ion-fab vertical="bottom" horizontal="center" slot="fixed">
     <ion-fab-button (click)="photoService.addNewToGallery()">
       <ion-icon name="camera"></ion-icon>
