@@ -11,7 +11,7 @@
   <div id="container">
     <ion-searchbar [(ngModel)]="searchInput" placeholder="Search a course" type="search"></ion-searchbar>
     <ion-list inset="true">
-      <ion-item *ngFor="let course of courses | search: searchInput">
+      <ion-item *ngFor="let course of courses | searchCourse: searchInput">
         <ion-card>
           <ion-card-header>
             <ion-card-title> {{course.name}} </ion-card-title>

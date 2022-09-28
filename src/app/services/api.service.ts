@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {Model} from '../models/model';
+import {Model} from '../core/models/model';
 import {UrlParts} from '../utils/urlParts';
 
 const url = UrlParts.url;

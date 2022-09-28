@@ -1,18 +1,18 @@
 import {Component, OnInit} from '@angular/core';
 import {Course} from '../../../models/course';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {ApiService} from '../../../services/api.service';
+import {ApiService} from '../../../../services/api.service';
 import {ActivatedRoute, Router} from '@angular/router';
-import {UrlParts} from '../../../utils/urlParts';
+import {UrlParts} from '../../../../utils/urlParts';
 import {Teacher} from '../../../models/teacher';
-import {redirectTo} from '../../../utils/methods';
+import {redirectTo} from '../../../../utils/methods';
 
 const urlPart = UrlParts.course;
 
 @Component({
   selector: 'app-course-add',
   templateUrl: './course-add.page.html',
-  styleUrls: ['../globalPageStyle.scss'],
+  styleUrls: ['../../globalPageStyle.scss'],
 })
 export class CourseAddPage implements OnInit {
 
@@ -62,7 +62,7 @@ export class CourseAddPage implements OnInit {
   }
 
   private getTeachers() {
-    this.route.data.subscribe(data => this.teachers = data.teachers);
+    this.route.data.subscribe(data => this.teachers = data.teachers.filter(u => u.roleId === 2));
   }
 
   private getCourse(id: number) {

@@ -2,9 +2,9 @@ import {Pipe, PipeTransform} from '@angular/core';
 import {CourseJoint} from '../../models/courseJoint';
 
 @Pipe({
-  name: 'search'
+  name: 'searchCourse'
 })
-export class SearchPipe implements PipeTransform {
+export class SearchCoursePipe implements PipeTransform {
 
   transform(course: CourseJoint[], searchInput: string): any[] {
     if (!course) {

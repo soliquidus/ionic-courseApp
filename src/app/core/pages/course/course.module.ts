@@ -1,14 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
 import { CoursePageRoutingModule } from './course-routing.module';
 
 import { CoursePage } from './course.page';
-import {CoursesListPageModule} from './course-list/courses-list.module';
-import {CourseAddPageModule} from './course-add/course-add.module';
+import {CoursesListPage} from './course-list/courses-list.page';
+import {CourseAddPage} from './course-add/course-add.page';
+import {SearchCoursePipe} from '../shared/searchCourse.pipe';
 
 @NgModule({
   imports: [
@@ -16,9 +17,9 @@ import {CourseAddPageModule} from './course-add/course-add.module';
     FormsModule,
     IonicModule,
     CoursePageRoutingModule,
-    CoursesListPageModule,
-    CourseAddPageModule
+    ReactiveFormsModule
   ],
-  declarations: [CoursePage]
+  declarations: [CoursePage, SearchCoursePipe, CoursesListPage, CourseAddPage],
+  exports: [SearchCoursePipe]
 })
 export class CoursePageModule {}

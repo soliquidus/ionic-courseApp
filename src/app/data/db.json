@@ -13,20 +13,44 @@
       "id": 2
     }
   ],
-  "teacher": [
+  "user": [
     {
       "id": 1,
+      "login": "Jurassic Fart",
+      "password": "12345678",
       "firstName": "Fred",
       "lastName": "Flintstones",
       "email": "yabadaba.douh@gmail.com",
-      "courseId": 1
+      "courseId": 1,
+      "roleId": 2
     },
     {
       "id": 2,
+      "login": "Mind Blower",
+      "password": "12345678",
       "firstName": "Charles",
       "lastName": "Xavier",
       "email": "mind.blowing@gmail.com",
-      "courseId": 2
+      "roleId": 2
+    },
+    {
+      "id": 3,
+      "login": "admin",
+      "password": "admin",
+      "firstName": "The",
+      "lastName": "Admin",
+      "email": "admin@gmail.com",
+      "roleId": 1
+    }
+  ],
+  "role": [
+    {
+      "id": 1,
+      "role": "Administrator"
+    },
+    {
+      "id": 2,
+      "role": "Teacher"
     }
   ]
 }
