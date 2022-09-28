@@ -1,11 +1,11 @@
 import {Course} from './course';
-import {Teacher} from './teacher';
+import {User} from './User';
 
 export class CourseJoint extends Course {
-  teacher!: [Teacher];
+  teacher!: [User];
 
 
-  constructor(name: string, pupils: number, idProfessor: number, teacher: [Teacher]) {
+  constructor(name: string, pupils: number, idProfessor: number, teacher: [User]) {
     super(name, pupils, idProfessor);
     this.teacher = teacher;
   }

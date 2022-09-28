@@ -62,7 +62,7 @@ export class CourseAddPage implements OnInit {
   }
 
   private getTeachers() {
-    this.route.data.subscribe(data => this.teachers = data.teachers);
+    this.route.data.subscribe(data => this.teachers = data.teachers.filter(u => u.roleId === 2));
   }
 
   private getCourse(id: number) {
