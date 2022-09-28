@@ -3,12 +3,14 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { CameraPageRoutingModule } from './camera-routing.module';
-import { CameraPage } from './components/camera.page';
+import { CameraPage } from './camera/camera.page';
+import { GalleryPage } from './gallery/gallery.page';
 
 @NgModule({
 
   declarations: [
-    CameraPage
+    CameraPage,
+    GalleryPage
   ],
 
   imports: [

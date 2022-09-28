@@ -1,16 +1,22 @@
 {
   "course": [
     {
-      "id": 1,
       "name": "Palaeontology",
-      "pupils": 8,
-      "teacherId": 1
+      "pupils": 7,
+      "teacherId": 1,
+      "id": 1
     },
     {
       "name": "Psychology",
-      "pupils": 13,
+      "pupils": 12,
       "teacherId": 2,
       "id": 2
+    },
+    {
+      "name": "fdsff",
+      "pupils": 1,
+      "teacherId": 1,
+      "id": 3
     }
   ],
   "user": [
@@ -41,6 +47,34 @@
       "lastName": "Admin",
       "email": "admin@gmail.com",
       "roleId": 1
+    },
+    {
+      "firstName": "ghghgfh",
+      "lastName": "hgfdhgfhf",
+      "urlPhoto": "hgfhgf",
+      "yearsOfExperience": "06",
+      "discipline": "hgfdgfd",
+      "email": "fghdhg@gmail.com",
+      "id": 4
+    },
+    {
+      "firstName": "dsffds",
+      "lastName": "fdssfd",
+      "urlPhoto": "",
+      "yearsOfExperience": "1",
+      "discipline": "dsfdsfsd",
+      "email": "fdsfd@gmail.com",
+      "id": 5
+    },
+    {
+      "firstName": "dsgdfgf",
+      "lastName": "dfgfd",
+      "urlPhoto": "f",
+      "yearsOfExperience": "1",
+      "discipline": "dfgfdgfd",
+      "email": "fdgfd@gmail.com",
+      "roleId": 2,
+      "id": 6
     }
   ],
   "role": [
