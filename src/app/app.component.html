@@ -19,6 +19,23 @@
         </ion-list>
 
         <ion-list *ngIf="authService.canActivate()" lines="none">
+          <ion-list lines="none">
+            <ion-list-header>
+              Camera
+            </ion-list-header>
+            <ion-menu-toggle autoHide="false">
+              <ion-item routerLink="camera" routerLinkActive="selected" routerDirection="root" detail="false">
+                <ion-icon slot="start" name="camera"></ion-icon>
+                <ion-label>
+                  Take a selfist.
+                </ion-label>
+              </ion-item>
+
+            </ion-menu-toggle>
+          </ion-list>
+        </ion-list>
+
+        <ion-list *ngIf="authService.canActivate()" lines="none">
           <ion-list-header>
             Account
           </ion-list-header>
@@ -57,14 +74,14 @@
             </ion-item>
           </ion-menu-toggle>
 
-<!--          <ion-menu-toggle autoHide="false">-->
-<!--            <ion-item routerLink="/signup" routerLinkActive="active" routerDirection="root" detail="false">-->
-<!--              <ion-icon slot="start" name="person-add"></ion-icon>-->
-<!--              <ion-label>-->
-<!--                Signup-->
-<!--              </ion-label>-->
-<!--            </ion-item>-->
-<!--          </ion-menu-toggle>-->
+          <!--          <ion-menu-toggle autoHide="false">-->
+          <!--            <ion-item routerLink="/signup" routerLinkActive="active" routerDirection="root" detail="false">-->
+          <!--              <ion-icon slot="start" name="person-add"></ion-icon>-->
+          <!--              <ion-label>-->
+          <!--                Signup-->
+          <!--              </ion-label>-->
+          <!--            </ion-item>-->
+          <!--          </ion-menu-toggle>-->
         </ion-list>
       </ion-content>
     </ion-menu>

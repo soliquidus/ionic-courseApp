@@ -11,6 +11,18 @@
       "pupils": 13,
       "teacherId": 2,
       "id": 2
+    },
+    {
+      "name": "Sex education",
+      "pupils": 69,
+      "teacherId": 1,
+      "id": 3
+    },
+    {
+      "name": "fdsfds",
+      "pupils": 56,
+      "teacherId": 1,
+      "id": 4
     }
   ],
   "user": [
@@ -21,8 +33,6 @@
       "firstName": "Fred",
       "lastName": "Flintstones",
       "email": "yabadaba.douh@gmail.com",
-      "discipline": "Palaeontology",
-      "yearsOfExperience": 40,
       "courseId": 1,
       "roleId": 2
     },
@@ -32,8 +42,6 @@
       "password": "12345678",
       "firstName": "Charles",
       "lastName": "Xavier",
-      "discipline": "Psychology",
-      "yearsOfExperience": 35,
       "email": "mind.blowing@gmail.com",
       "roleId": 2
     },
