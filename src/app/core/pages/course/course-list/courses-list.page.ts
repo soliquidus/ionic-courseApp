@@ -9,7 +9,7 @@ const urlPartCourse = UrlParts.course;
 @Component({
   selector: 'app-courses-list',
   templateUrl: './courses-list.page.html',
-  styleUrls: ['../../globalPageStyle.scss'],
+  styleUrls: ['../../shared/globalPageStyle.scss'],
 })
 export class CoursesListPage implements OnInit {
 

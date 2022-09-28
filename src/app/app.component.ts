@@ -9,6 +9,7 @@ import {AuthentificationService} from './core/authentification/services/authenti
 export class AppComponent implements OnChanges, OnInit {
   public appPages = [
     {title: 'Course List', url: '/course/list', icon: 'list'},
+    {title: 'Teacher List', url: '/teacher/list', icon: 'list'}
   ];
 
   constructor(public authService: AuthentificationService) {

@@ -50,14 +50,12 @@ export class AuthentificationService {
   }
 
   public loginFilter(username: string, password: string): void {
-    console.log('OK');
     this.http.get<User[]>(UrlParts.url + UrlParts.user).pipe(
       map(logins => logins.filter(
         login => login.login === username && login.password === password
       ))
     ).subscribe({
       next: logins => {
-        console.log('OK2');
         if (logins.length === 1) {
           const newLogin = logins[0];
           console.log(newLogin);

@@ -7,9 +7,13 @@ export class User extends Model {
   firstName!: string;
   lastName!: string;
   email!: string;
+  discipline!: string;
+  yearsOfExperience!: number;
+  urlPhoto!: string;
 
   constructor(roleId: number = 0, login: string = '', password: string = '',
-              firstName: string = '', lastName: string = '', email: string = '') {
+              firstName: string = '', lastName: string = '', email: string = '',
+              discipline: string = '', yearsOfExperience: number = 0, urlPhoto = '') {
     super();
     this.roleId = roleId;
     this.login = login;
@@ -17,5 +21,8 @@ export class User extends Model {
     this.firstName = firstName;
     this.lastName = lastName;
     this.email = email;
+    this.discipline = discipline;
+    this.yearsOfExperience = yearsOfExperience;
+    this.urlPhoto = urlPhoto;
   }
 }

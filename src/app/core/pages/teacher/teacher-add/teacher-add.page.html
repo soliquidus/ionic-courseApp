@@ -1,0 +1,76 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>{{ title }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div id="container">
+    <form [formGroup]="form" (ngSubmit)="onSubmit(isNew)" novalidate>
+      <ion-item>
+        <ion-label>Teacher's first name:</ion-label>
+        <ion-input *ngIf="isNew" placeholder="Enter teacher's first name" formControlName="firstName"></ion-input>
+        <ion-input *ngIf="!isNew" placeholder="Enter teacher's first name" formControlName="firstName" [(ngModel)]="teacher.firstName"></ion-input>
+
+        <div *ngIf="form.get('firstName').invalid && (form.get('firstName').dirty || form.get('firstName').touched)" class="alert alert-danger">
+        You must enter a valid first name
+        </div>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Teacher's last name:</ion-label>
+        <ion-input *ngIf="isNew" placeholder="Enter teacher's last name" formControlName="lastName"></ion-input>
+        <ion-input *ngIf="!isNew" placeholder="Enter teacher's last name" formControlName="lastName" [(ngModel)]="teacher.lastName"></ion-input>
+
+        <div *ngIf="form.get('lastName').invalid && (form.get('lastName').dirty || form.get('lastName').touched)" class="alert alert-danger">
+        You must enter a valid last name
+        </div>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Teacher's photo:</ion-label>
+        <ion-input *ngIf="isNew" placeholder="Enter teacher's photo" formControlName="urlPhoto"></ion-input>
+        <ion-input *ngIf="!isNew" placeholder="Enter teacher's photo" formControlName="urlPhoto" [(ngModel)]="teacher.urlPhoto"></ion-input>
+
+        <div *ngIf="form.get('urlPhoto').invalid && (form.get('urlPhoto').dirty || form.get('urlPhoto').touched)" class="alert alert-danger">
+        You must enter a valid photo
+        </div>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Teacher's years of experience:</ion-label>
+        <ion-input *ngIf="isNew" placeholder="Enter teacher's years of experience" formControlName="yearsOfExperience"></ion-input>
+        <ion-input *ngIf="!isNew" placeholder="Enter teacher's years of experience" formControlName="yearsOfExperience" [(ngModel)]="teacher.yearsOfExperience"></ion-input>
+
+        <div *ngIf="form.get('yearsOfExperience').invalid && (form.get('yearsOfExperience').dirty || form.get('yearsOfExperience').touched)" class="alert alert-danger">
+          You must enter a number for the years of experience
+          </div>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Teacher's discipline:</ion-label>
+        <ion-input *ngIf="isNew" placeholder="Enter teacher's discipline" formControlName="discipline"></ion-input>
+        <ion-input *ngIf="!isNew" placeholder="Enter teacher's discipline" formControlName="discipline" [(ngModel)]="teacher.discipline"></ion-input>
+
+        <div *ngIf="form.get('discipline').invalid && (form.get('discipline').dirty || form.get('discipline').touched)" class="alert alert-danger">
+        You must enter a valid discipline
+        </div>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Teacher's email:</ion-label>
+        <ion-input *ngIf="isNew" placeholder="Enter teacher's email" formControlName="email"></ion-input>
+        <ion-input *ngIf="!isNew" placeholder="Enter teacher's email" formControlName="email" [(ngModel)]="teacher.email"></ion-input>
+
+        <div *ngIf="form.get('email').invalid && (form.get('email').dirty || form.get('email').touched)" class="alert alert-danger">
+        You must enter a valid email
+        </div>
+      </ion-item>
+
+      <ion-button type="submit" [disabled]="!form.valid">Save</ion-button>
+    </form>
+  </div>
+</ion-content>
