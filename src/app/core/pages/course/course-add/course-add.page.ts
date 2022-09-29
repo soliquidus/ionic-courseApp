@@ -1,11 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { Course } from '../../../models/course';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ApiService } from '../../../../services/api.service';
-import { ActivatedRoute, Router } from '@angular/router';
-import { UrlParts } from '../../../../utils/urlParts';
-import { Teacher } from '../../../models/teacher';
-import { redirectTo } from '../../../../utils/methods';
+import {Component, OnInit} from '@angular/core';
+import {Course} from '../../../models/course';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {ApiService} from '../../../../services/api.service';
+import {ActivatedRoute, Router} from '@angular/router';
+import {UrlParts} from '../../../../utils/urlParts';
+import {Teacher} from '../../../models/teacher';
 
 const urlPart = UrlParts.course;
 
@@ -49,8 +48,7 @@ export class CourseAddPage implements OnInit {
     } else {
       this.service.add(urlPart, this.course).subscribe();
     }
-    redirectTo('course/list', this.router);
-
+    this.router.navigateByUrl('course/list');
   }
 
   initForm() {
@@ -58,7 +56,7 @@ export class CourseAddPage implements OnInit {
       name: ['', [Validators.required, Validators.minLength(4), Validators
         .pattern('^[a-zA-Z 0-9]+$')]],
       pupils: ['', Validators.required],
-      teacherId: ['', [Validators.required, Validators.pattern('^[0-9]+$')]]
+      userId: ['', [Validators.required, Validators.pattern('^[0-9]+$')]]
     });
   }
 

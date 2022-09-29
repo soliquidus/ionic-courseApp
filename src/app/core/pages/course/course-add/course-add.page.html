@@ -20,13 +20,13 @@
     </div>
       <ion-item>
         <ion-label>Teacher:</ion-label>
-        <ion-select formControlName="teacherId" class="form-control" [(ngModel)]="course.teacherId">
+        <ion-select formControlName="userId" class="form-control" [(ngModel)]="course.userId">
           <ion-select-option *ngFor="let teacher of teachers" [value]="teacher.id">
             {{teacher.firstName}} {{teacher.lastName}}
           </ion-select-option>
         </ion-select>
       </ion-item>
-      <div *ngIf="form.controls['teacherId'].invalid && (form.controls['teacherId'].dirty || form.controls['teacherId'].touched)" class="alert alert-danger">
+      <div *ngIf="form.controls['userId'].invalid && (form.controls['userId'].dirty || form.controls['userId'].touched)" class="alert alert-danger">
       Please choose a teacher
     </div>
       <ion-item>

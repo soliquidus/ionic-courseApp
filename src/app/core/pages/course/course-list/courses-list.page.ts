@@ -24,6 +24,11 @@ export class CoursesListPage implements OnInit {
 
   ngOnInit() {
     this.service.findAll(urlPart).subscribe(list => this.courses = list);
+    console.log(this.courses);
+  }
+
+  ionViewDidEnter() {
+    this.ngOnInit();
   }
 
   delete(c: CourseJoint) {

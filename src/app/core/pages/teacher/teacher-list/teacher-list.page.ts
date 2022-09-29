@@ -29,6 +29,10 @@ export class TeacherListPage implements OnInit {
     this.service.findAll(urlPart).subscribe(list => this.teachers = list.filter(u => u.roleId === 2));
   }
 
+  ionViewDidEnter() {
+    this.ngOnInit();
+  }
+
   delete(teacher: User) {
     this.service.delete(urlPart, teacher).subscribe(() => {
       this.ngOnInit();
